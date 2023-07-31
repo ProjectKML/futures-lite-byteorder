@@ -1,0 +1,8 @@
+[package]
+name = "futures-lite-byteorder"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+byteorder = "1.4.3"
+futures-lite = "1.13.0"
