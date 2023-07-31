@@ -5,7 +5,7 @@
 
 # `📦 futures-lite-byteorder`
 
-**A small crate that adds byteorder support to futures_lite **
+**A small crate that adds byteorder support to futures_lite**
 
 [![crates][crates-badge]][crates-url]
 [![license][license-badge]][license-url]
