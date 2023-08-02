@@ -117,6 +117,8 @@ pub trait AsyncByteOrderWrite: AsyncWriteExt {
     write_impl!(WriteI64Future, write_i64, i64);
 }
 
+impl<W: AsyncWriteExt> AsyncByteOrderWrite for W {}
+
 macro_rules! read_future_8 {
     ($future: ident, $ty: ty) => {
         pub struct $future<'a, R: Unpin + ?Sized> {
@@ -211,7 +213,7 @@ read_future!(ReadI32Future, read_i32, i32);
 read_future!(ReadU64Future, read_u64, u64);
 read_future!(ReadI64Future, read_i64, i64);
 
-pub trait AsyncByteOrderReader: AsyncReadExt {
+pub trait AsyncByteOrderRead: AsyncReadExt {
     read_impl_8!(ReadU8Future, read_u8, u8);
     read_impl_8!(ReadI8Future, read_i8, i8);
 
@@ -222,3 +224,5 @@ pub trait AsyncByteOrderReader: AsyncReadExt {
     read_impl!(ReadU64Future, read_u64, u64);
     read_impl!(ReadI64Future, read_i64, i64);
 }
+
+impl<R: AsyncReadExt> AsyncByteOrderRead for R {}
