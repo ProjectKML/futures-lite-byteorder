@@ -3,6 +3,21 @@ name = "futures-lite-byteorder"
 version = "0.1.0"
 edition = "2021"
 
+authors = [ "Lorenz Klaus <beastle9end@outlook.de>", "Marlon Klaus <marlon.klaus@icloud.com>" ]
+description = "A small crate that adds byteorder support to futures_lite"
+homepage = "https://github.com/projectkml/futures-lite-byteorder"
+repository = "https://github.com/projectkml/futures-lite-byteorder"
+documentation = "https://docs.rs/futures-lite-byteorder"
+readme = "README.md"
+categories = ["encoding", "parsing", "async"]
+keywords = ["byte", "endian", "big-endian", "little-endian", "binary"]
+license = "MIT/Apache-2.0"
+include = [
+    "src/*.rs",
+    "Cargo.toml",
+]
+
+
 [dependencies]
 byteorder = "1.4.3"
 futures-lite = "1.13.0"
