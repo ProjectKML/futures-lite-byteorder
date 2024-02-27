@@ -150,7 +150,7 @@ macro_rules! read_future {
             reader: &'a mut R,
             buf: [u8; mem::size_of::<$ty>()],
             n: usize,
-            phantom: PhantomData<&'a T>
+            phantom: PhantomData<&'a T>,
         }
 
         impl<R: AsyncRead + Unpin + ?Sized, T: ByteOrder> Future for $future<'_, R, T> {
@@ -197,10 +197,10 @@ macro_rules! read_impl {
                 reader: self,
                 buf: Default::default(),
                 n: 0,
-                phantom: PhantomData
+                phantom: PhantomData,
             }
         }
-    }
+    };
 }
 
 read_future_8!(ReadU8Future, u8);
